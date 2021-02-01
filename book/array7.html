@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>array배열6</title>
+    <script>
+        var array = [
+         ["HOME","홈"],
+         ["LOGIN","로그인"],
+         ["MEMBERSHIP","회원가입"],
+         ["CUSTOMER","고객센터"],
+         ["EVENT","이벤트"]
+        ];
+        var num = array.length;
+    </script>
+    <style>
+        body{ margin: 0; padding: 0; }
+        .menus {height:40px; text-align: center; }
+        .divmenu { width:100px; height:40px; line-height: 40px;
+        font-size: 12px; text-align: center; border:1px solid red;
+        box-sizing: border-box; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="menus" id="menus">
+
+</div>
+</body>
+</html>
+<script>
+    var lang = 0; // 한글-1,영어-0 여기서 변경함
+    var f;
+    var html=""; //html문자를 넣는거라 null보다는 ""을 넣음
+    for(f=0;f<num;f++){
+        html = html+"<div class='divmenu'>"+ array[f][lang] +"</div>";
+    }
+    document.getElementById("menus").innerHTML = html;
+</script>

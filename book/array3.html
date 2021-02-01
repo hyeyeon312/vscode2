@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>array배열3</title>
+<script>
+    var array = [
+        ["red","빨강"],
+        ["blue","파랑"],
+        ["green","녹색"],
+        ["yellow","노랑"],
+        ["pink","분홍"],
+        ["black","검정"]
+    ];
+    var arraynum = array.length;
+    var r;
+    var color = "white";
+    var ck ="1"
+    for(r=0;r<arraynum;r++){
+        if(color==array[r][0]){
+        alert("해당색상이 있습니다.");
+        //document.write(array[r][0]+"<br>");
+        ck = ""; 
+        }
+    }
+    if(ck =="1"){
+        alert("해당색상이 없습니다.");
+    }
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

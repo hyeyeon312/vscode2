@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+//문제2 
+//버튼 클릭 시 사용자가 입력한 숫자 또는 문자를 확인하여 숫자로 확인 된 것 중
+//해당 값에 대한 구구단을 출력하시오 
+//number
+
+function aaa(){
+    var aa = Number(document.getElementById("a").value);
+    var b;
+    var c;
+    if(isNaN(aa)==true){
+        alter("숫자만 입력하세요");
+    }
+    else{
+        for(b=1;b<10;b++){
+        c=aa*b;
+        document.write(aa+"*"+b+"="+c+"<br>");
+        }
+    }
+}
+</script>
+</head>
+<body>
+<input type="text" id="a">
+<input type="button" value="확인" onclick="aaa();">
+</body>
+<script>
+</script>
+</html>

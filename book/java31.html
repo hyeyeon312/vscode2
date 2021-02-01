@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+//이메일 회신 정보를 입력하게됩니다.
+//단, 사용자가 직접 입력할 수는 없습니다.
+//해당 메일 회사를 선택하고 선택된 값이 input에 적용되도록 합니다.
+
+function aaa(c){
+    // var a=document.getElementById("txt").value;
+    // var b =document.getElementById("ma").value;
+    document.getElementById("txt").value=c;
+}
+</script>
+<body>
+    <input type="text" id="txt">
+    <select name="ma" id="ma" onchange="aaa(this.value);">
+        <option value="">[이메일주소]</option>
+        <option value="nate.com">nate.com</option>
+        <option value="naver.com">naver.com</option>
+        <option value="gmail.com">gmail.com</option>
+        <option value="hanmail.com">hanmail.com</option>
+    </select>
+</body>
+<script>
+</script>
+</html>

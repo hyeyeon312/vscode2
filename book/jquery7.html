@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Jquery7</title>
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //임시변수
+            var $disc = 0;
+            //노드갯수
+            var $node = $("#ulcss>li").length; 
+
+            $("#right").click(function(){
+                //alert($node); // 5
+                //반복문 전체를 black
+                var $f;
+                for($f=0;$f<$node;$f++){
+                $("#ulcss>li").eq($f).css("background-color","black");
+                }
+                //임시변수 카운트 숫자 +1씩 증가
+                if($disc<$node-1){ //노드갯수보다 작아야.. // 4까지 +1증가됨 
+                    $disc = $disc + 1;
+                }
+                else{ //5가 되었을때 새롭게 시작 
+                    $disc=0;
+                }
+                //$disc = $disc + 1;
+                $("#ulcss>li").eq($disc).css("background-color","red");
+                //해당 노드만 red로 처리
+            });
+            $("#left").click(function(){
+                //해당노드 0 맨끝에 노드로 이동 if 조건
+                if($disc<=0){// 
+                    $disc = $node -1; //노드는4까지 
+                }
+                else{
+                    --$disc;
+                }
+                console.log($disc)
+                //반복문 전체 black으로 설정
+                var $d;
+                for($d=0;$d<$node;$d++){
+                    $("#ulcss>li").eq($d).css("background-color","black");
+                }
+                //해당노드만 red로 변경
+                $("#ulcss>li").eq($disc).css("background-color","red");
+            });
+        });
+    </script>
+    <style>
+        body { margin: 0; padding: 0; }
+        .ulcss{list-style: none; padding: 0;margin: 0;}
+        .ulcss>li{width: 40px; height: 5px; 
+        background-color: black; display: inline-block;}
+        .ulcss>li:first-child{background-color: red;}
+    </style>
+</head>
+<body>
+<ul class="ulcss" id="ulcss">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<input type="button" value="<<" id="left">
+<input type="button" value=">>" id="right">
+</body>
+</html>

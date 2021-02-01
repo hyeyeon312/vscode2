@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>Javascript 131p~157p 함수</title>
+<script>
+        function gopage(){
+            var pw1 = document.getElementById("pw1").value;
+            var pw2 = document.getElementById("pw2").value;
+
+            if(pw1=="" || pw2==""){
+                alert("패스워드 및 동일한 패스워드를 입력해 주세요");
+            }
+            else{
+                if(pw1==pw2){
+                f.method="post";
+                f.action="http://reduck.dothome.co.kr/book/check.php";
+                f.submit();
+                }
+                else{
+                    alert("동일한 패스워드를 입력해 주세요");  
+                }
+            }
+        }
+</script>
+</head>
+<body>
+<form name="f" id="f">
+<input type="hidden" name="sa" id="sa" value="">
+<input type="hidden" name="ceonm" id="ceonm" value="">
+<input type="password" name="pw1" id="pw1" placeholder="변경할 패스워드를 입력하세요">
+<input type="password" name="pw2" id="pw2" placeholder="동일한 패스워드를 입력하세요">
+<input type="button" value="패스워드 변경" onclick="gopage();">
+</form>
+<script>
+    //?ck=on&snumber1=123465&snumber2=3400678&sname=hong
+     var sanum = location.search;
+     var a = sanum.split("snumber1=");
+     var b = sanum.split("snumber2=");
+     var c = sanum.split("sname=");
+    
+    var a1= a[1].substr(0,6)+b[1].substr(0,7);
+    document.getElementById("sa").value=a1;
+    document.getElementById("ceonm").value=c[1];
+    console.log(c[1]);
+</script>
+</body>
+</html>

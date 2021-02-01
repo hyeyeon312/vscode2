@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+// 문제8 
+// 전체선택 체크 시 번호 1번부터 5번까지 모두 체크 되어야 합니다.
+// 전체선택 체크아웃시 번호 1~5번까지 모두 체크아웃 되어야합니다. 
+function aaa(){
+    var a = document.getElementById("aa").checked;
+    if(a==true){
+        for(d=1;d<6;d++){
+         document.getElementById("a"+d).checked=true;
+        }
+    }    
+    else{
+        for(d=1;d<6;d++){
+         document.getElementById("a"+d).checked=false;
+        }
+    }
+}
+
+// function aaa(){
+//     var a=document.getElementsByClassName("b").length;
+//     if(document.getElementById("aa").checked==true){
+//         for(var d=1;d<a;d++){
+//             var ids="a"+d;
+//             document.getElementById(ids).checked=true;
+//         }
+//     }
+//     else{
+//         for(var d=1;d<a;d++){
+//             var ids="a"+d;
+//         document.getElementById(ids).checked=false;
+//         }
+//     }
+// }
+
+// function aaa(){
+//     var all=document.getElementsByClassName('ck').length;
+//     var aw=null;
+//         if(document.getElementById('allck').checked==true){
+//              aw = true;
+//         }
+//         else{
+//             aw = false;
+//         } 
+//         for(var i=0; i<all; i++){
+//             var ids="ck"+i;
+//             document.getElementById(ids).checked=aw;
+//             }
+
+//         }
+</script>
+</head>
+<body>
+<input type="checkbox" id="allck" onclick="aaa();">전체선택
+<input type="checkbox" id="a1" class="ck">번호1
+<input type="checkbox" id="a2" class="ck">번호2
+<input type="checkbox" id="a3" class="ck">번호3
+<input type="checkbox" id="a4" class="ck">번호4
+<input type="checkbox" id="a5" class="ck">번호5
+</body>
+<script>
+
+</script>
+</html>

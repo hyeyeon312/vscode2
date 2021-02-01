@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>HTML 2-18</title>
+    <style>
+        body{margin: 0; padding: 0;}
+        .box{width: 1000px; height: 400px; border: 1px solid #cccccc; position: absolute;
+        left:50%; margin-left:-500px; top:50%; margin-top:-200px;
+        }
+        p{margin: 20px; font-size: 14px; font-weight: bold;}
+        .joinbox{width: 900px; height: 240px; border: 1px solid #0067b8; margin: 0 auto;
+            font-size: 12px;
+         }
+        
+
+        .joinbox>td:nth-child(1){width: 120px; height: 40px;text-align: center;}
+        tr>td>.text{width: 200px; height: 30px; line-height: 30px; text-align: center; margin-left:5px; margin-right: 5px;}
+        tr>td>.text2{width: 400px; height: 30px; line-height: 30px; text-align: center; margin-left:5px; margin-right: 5px;}
+
+        tr>td:nth-child(1){text-align: center; font-size: 12px; font-weight: bold;}
+        .tr2>td>.span1{margin-left: 120px;}
+        .tr2>td>.span1>.text{display:inline-block;width: 200px; height: 30px; }
+        .btn{width: 100px; height: 40px; background-color: #0067b8; color: #ffffff; border: none;}
+        
+        .btn1{
+            
+            width: 100px; height: 30px; background-color: #0067b8; 
+            border: none; color:white}
+
+    </style>
+</head>
+
+<body>
+    <!-- <table border="1">
+        <caption>Caption</caption>
+        <thead bgcolor="green">
+            <tr>
+                <th>Table Header</th>
+                <th>Table Header</th>
+                <th>Table Header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td bgcolor="red">Table Data</td>
+                <td bgcolor="red">Table Data</td>
+                <td bgcolor="blue">Table Data</td>
+            </tr>
+            <tr>
+                <td bgcolor="red">Table Data</td>
+                <td bgcolor="red">Table Data</td>
+                <td bgcolor="blue">Table Data</td>
+            </tr>
+            <tr>
+                <td bgcolor="red">Table Data</td>
+                <td bgcolor="red">Table Data</td>
+                <td bgcolor="blue">Table Data</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr  bgcolor="yellow">
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+        </tfoot>
+    </table> -->
+
+    <div class="box">
+        <p>간편회원가입</p>
+           <table border="1" class="joinbox" cellspacing="0">
+                <tr class="tr1">
+                    <td>회원아이디</td>
+                    <td>
+                        <input type="text" class="text">
+                        <input type="button" value="중복확인" class="btn">
+                    </td>
+                </tr>
+                <tr class="tr2">
+                    <td>패스워드</td>
+                    <td>
+                        <input type="password" class="text" class="pass">
+                        <span class="span1">패스워드 확인 <input type="password" class="text"></span>
+                    </td>
+                </tr>
+                <tr class="tr3">
+                    <td>회원인증 휴대폰</td>
+                    <td><input type="text" class="text"> "-"포함하지 않고 숫자만 입력합니다.</td>
+                </tr>
+                <tr class="tr4">
+                    <td>회원이메일</td>
+                    <td><input type="text" class="text"></td>
+                </tr>
+                <tr class="tr5">
+                    <td>VIP 회원코드 번호</td>
+                    <td><input type="text" class="text2"> 
+                    <label>※VIP회원코드를 가지고 계신 고객분들은 입력해주시길바랍니다.</label>
+                    </td>
+                </tr>
+                <tr class="tr6">
+                    <td>구매의사 소프트웨어</td>
+                    <td>
+                        <input type="radio" name="w10" id="a1"><label for="a1">윈도우 10</label>
+                        <input type="radio" name="soft" id="a2"><label for="a2">MS-OFFICE</label>
+                        <input type="radio" name="soft" id="a3"><label for="a3">X-BOX</label>
+
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="회원가입" class="btn1">
+            <input type="button" value="가입취소" class="btn1">
+    </div>
+</body>
+</html>

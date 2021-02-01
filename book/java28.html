@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+//prnm이라는 name을 가진 입력값에 사용자를 입력합니다.
+//단, 숫자만 입력 했을 경우 경고메세지로 "숫자와 문자를 함께 입력 하세요" 라고 출력 
+//정상적으로 입력이 되었을 경우 POST로 데이터 
+//http://reduck.dothome.co.kr/book/java28.php 이동되도록 합니다.
+
+function aaa(){
+    var a = f.pernm.value;
+    if(isNaN(a)==false){ //숫자가아님=문자 , 문자가 아님 = 숫자.
+    alert("숫자와 문자를 함께 입력하세요");
+    }
+    else{
+    f.action="http://reduck.dothome.co.kr/book/java28.php";
+    f.method="POST";
+    f.submit();
+    }
+}
+</script>
+</head>
+<body>
+<form name="f">
+    <input type="text" name="pernm">
+    <input type="button" value="확인" onclick="aaa();">
+</form>
+
+
+</body>
+<script>
+</script>
+</html>

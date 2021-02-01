@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <meta charset="utf-8">
+    <title>HTML 3-60</title>
+</head>
+<style>
+div{width: 400px; height: 100px; border: 2px solid black; position: relative; overflow: hidden;}
+span{width: 100px; height: 100px; display: inline-block;}
+span:nth-child(1){background-color: red; position: absolute; top:10px; left: 10px; z-index: 10;}
+span:nth-child(2){background-color: green; position: absolute; top:50px; left: 50px; z-index: 7; }
+span:nth-child(3){background-color: blue;position: absolute; top:80px; left: 80px;}
+</style>
+<body>
+<!-- 다음 오브젝트 형태처럼 나오도록 퍼블리싱 하시오 
+redbox:100*100px , greenbox:100*100px, bluebox:100*100px ,blackbox:400*100px  -->
+<div>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>

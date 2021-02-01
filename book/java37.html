@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>팝업창 전달</title>
+<script>
+function search(){
+    window.open("popup.html","","width=400,height=600");
+    //document.getElementById("popup").style.display="block";
+}
+function change(){
+    var addrno=f.addr_num.value; //우편번호
+    var addr1 = f.addr1.value; // 도로명주소 
+    var addr2 = f.adde2.value; // 상세주소 
+
+    if(addrno=="" || addr1==""){
+        alert("도로명 주소를 검색해 주시길 바랍니다.");
+    }
+    else{
+        if(addr2==""){
+            alert("상세주소를 입력해 주세요");
+            f.addr1.focus();
+            return false;
+        }
+        else{
+            f.method="POST";
+            f.action = "http://reduck.dothome.co.kr/book/addrok.php";
+            f.submit();
+        }
+    }
+}
+</script>
+<style>
+    .box{width: 200px; height: auto;}
+    .txt{display:inline-block; width: 100px; height: 30px;text-align: center;}
+    .txt2{display:inline-block;width:200px; height: 30px;text-align: center;}
+    .btn{display:inline-block;width: 80px; height: 30px; border:none; background-color: black; color: white;}
+    .btn2{display:inline-block;width: 80px; height: 30px; border:none; background-color: black; color: white;
+    position: absolute; left: 70px; top:120px} 
+    /*.address{width: 500px; height: 600px; border:1px solid black; display: none; }*/
+    
+</style>
+</head>
+<body>
+<div class="box">
+    <form name="f" id="f">
+        <input type="hidden" name="addr_modify" value="user_addr">
+        <input type="text" name="addr_num" readonly class="txt"> <input type="button" value="주소찾기"  class="btn" onclick="search();"><br>
+        <input type="text" name="addr1" readonly class="txt2"> <br>
+        <input type="text" name="addr2" class="txt2"><br>
+        <input type="button" value="주소변경" class="btn2" onclick="change();" >
+    <!--<iframe id="popup" src="http://ona0421.dothome.co.kr/book/java37.html" class="address"></iframe>-->
+    </form>
+</div>
+</body>
+<script>
+    
+</script>
+
+</html>
+ <!--
+    page1 
+    주소찾기 page를 제작해야합니다. 입력사항은 다음과 같습니다. 
+    우편번호 , 도로명, 상세주소로 나뉘어 지며 해당 데이터는 최종적으로 back-end에게 전달이 됩니다.
+    전달방식: POST ,  전달 URL:  http://reduck.dothome.co.kr/book/addrok.php;
+    Name 값 :  
+    도로 우편번호:addr_num
+    도로명 주소 : addr1
+    상세주소: addr2
+    보안코드 : addr_modify //hidden으로 감춰야함 , value ="user_addr"
+    주소찾기 버튼 클릭 시 검색팝업창이 열려야합니다. 
+    우편번호 , 도로명은 readonly 입니다. 상세주소는 사용자가 직접 입력하게 됩니다. 
+ -->
+<!--reduck.dothome.co.kr/book/address.txt
+    page2
+    팝업창에서 시작하게 됩니다. 
+    주소 입력부분이 있어야하며 주소 검색 시 배열로 되어있는 데이터 값을 출력하시면 됩니다. 
+    우편번호 , 도로명주소를 부모창에 전달되도록 합니다. 
+    배열값은 Back-end에서 직접 데이터를 가공해서 줍니다. 
+    2page 입력값 name은 자유입니다. 
+    창닫기 버튼 클릭 시 팝업창이 닫혀져야 하며 주소재검색 버튼 클릭 시 다시 검색할 수 있도록 합니다. 
+-->

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+//문제9
+//회원가입시 약관에 대한 동의를 받는 부분입니다. 전체약관 동의에 체크시 3개의 약관부분에 동의함으로 
+//모두 체크되어야 하며 체크해제시 모든약관에 동의안함으로 체크되어야합니다.
+//단 처음 체크시 동의 안함으로 체크 되도록 하세요 
+function aaa(){
+    var a=document.getElementById("allck").checked;
+    if(a==true){
+        for(var b=1;b<4;b++){
+            var w ="ck"+b
+            var e ="nck"+b
+        document.getElementById(w).checked=true;
+        document.getElementById(e).checked=false;
+        }
+    }
+    else{
+        for(var b=1;b<4;b++){
+            var w ="ck"+b
+            var e ="nck"+b
+        document.getElementById(w).checked=false;
+        document.getElementById(e).checked=true;
+        }
+    }
+}
+
+    // function aaa(){
+    //     var a =null
+    //     var b =null
+    //     if(document.getElementById("allck").checked==true){
+    //         a=true;
+    //         b=false;
+    //     }
+    //     else{
+    //         a=false;
+    //         b=true;
+    //     }
+    //     var e;
+    //     for(e=1;e<4;e++){
+    //         var w = "ck"+e;
+    //         document.getElementById(w).checked=a;
+    //         var ww="nck"+e;
+    //         document.getElementById(ww).checked=b;
+    //     }
+    // }
+</script>
+</head>
+<body>
+<p>전체약관 모두 동의</p><input type="checkbox" id="allck" onclick="aaa();">
+<p>네이버 이용약관 동의</p>
+<input type="radio" id="ck1">동의함<input type="radio"  class="ck" id="nck1"   checked>동의안함
+<p>개인정보 수집 및 이용동의</p>
+<input type="radio" id="ck2">동의함<input type="radio"  class="ck" id="nck2" checked>동의안함
+<p>위치정보 이용약관 동의</p>
+<input type="radio" id="ck3">동의함<input type="radio"  class="ck"  id="nck3"checked>동의안함
+</body>
+<script>
+
+</script>
+</html>

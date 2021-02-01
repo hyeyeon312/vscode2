@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+    function aaa(){
+        if(document.getElementById("txt2").value==f){
+            alert("정상적으로 인증되었습니다.");
+        }
+        else{
+            alert("인증번호가 다릅니다.");
+        }
+    }
+</script>
+</head>
+    <body>
+<input type="text" readonly id="txt1" maxlength="4">
+<input type="text" id="txt2">
+<input type="button" value="인증" onclick="aaa();">
+</body>
+<script>
+    //문제7 
+    //읽기전용 부분에는 4개의 난수번호가 출력이됩니다. 
+    //사용자는 해당 난수번호와 동일하게 입력 시 "정상적으로 인증되었습니다 라고 경고메세지를 출력하시고 "
+    //동일하지 않을 경우 "인증번호가 다릅니다" 라고 출력 합니다.
+        // var a=Math.floor(Math.random()*9);
+        // var b=Math.floor(Math.random()*9);
+        // var c=Math.floor(Math.random()*9);
+        // var d=Math.floor(Math.random()*9);
+        var a=Math.round(Math.random()*9);
+        var b=Math.round(Math.random()*9);
+        var c=Math.round(Math.random()*9);
+        var d=Math.round(Math.random()*9);
+        var f=a+""+b+""+c+""+d;
+        document.getElementById("txt1").value=f;
+       //e.value=f;
+    
+    </script>
+</html>

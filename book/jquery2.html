@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>Jquery2</title>
+<script src="../jquery/jquery.js?v=2"></script>
+<script>
+$(document).ready(function(){
+ $("#btn").click(function(){
+    var $mid=$("#txt").val();
+    alert($mid);
+ });
+});
+</script>
+</head>
+<body>
+<input type="text" id="txt">
+ <input type="button" value="메세지" id="btn">
+</body>
+</html>

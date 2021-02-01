@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 84p - 부가사항23</title>
+<script>
+//Math.random , switch 
+//문제 23번 
+// 1~10 까지 숫자중 무작위 숫자 한개를 선택합니다. 
+// 그 중에서 
+// 10: 할인쿠폰 10%할인 
+// 20 : 할인쿠폰 20% 할인 
+// 30 : 택배비무료
+// 40 : 1+1 상품입니다. 
+// 50 : 할인쿠폰 50%할인 
+
+
+
+var a = Math.floor(Math.random()*10+1); // 1~11 까지 (0~10 말고 )
+switch(a){
+    case 1:
+    alert("할인쿠폰 10%할인");
+    break;
+    case 2:
+    alert("할인쿠폰 20% 할인");
+    break;
+    case 3:
+    alert("택배비무료");
+    break;
+    case 4:
+    alert("1+1 상품입니다. ");
+    break;
+    case 5:
+    alert("할인쿠폰 50%할인");
+    break;
+    default:
+    alert("다음기회에");
+    break;
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>팝업창 데이터 전달</title>
+<script>
+
+var addr=[
+    ["03116","서울특별시 종로구 난계로29가길 24 (숭인동, 종로 동광모닝스카이)"],
+    ["03132","서울특별시 종로구 삼일대로30길 9 (낙원동)"],
+    ["03116","서울특별시 종로구 난계로29가길 24 (숭인동, 종로 동광모닝스카이)"],
+    ["07375","서울특별시 영등포구 도신로15길 5 (도림동)"],
+    ["07246","서울특별시 영등포구 국회대로50길 20 (영등포동7가, 포레나 영등포)"],
+    ["03187","서울특별시 종로구 종로 6 (서린동)"],
+    ["01697","서울특별시 노원구 상계로18길 48 (상계동, 상계 예인빌라1차)"],
+    ["04534","서울특별시 중구 을지로 50 (을지로2가)"],
+    ["01703","서울특별시 노원구 노원로 428 (상계동, 상계2차중앙하이츠아파트)"],
+    ["04542","서울특별시 중구 을지로 103-1 (을지로2가)"],
+    ["04613","서울특별시 중구 다산로29길 58 (신당동)"],
+    ["02745","서울특별시 성북구 장위로24길 5-12 (장위동, 상계하이츠빌라)"],
+    ["01789","서울특별시 노원구 공릉로 392 (중계동)"],
+    ["04547","서울특별시 중구 동호로 359 (을지로5가)"]
+    ];
+
+    var match1=addr[2][1].match(/종로/g);
+    alert(match1);
+
+function ccc(){
+    document.getElementById("addr").value;
+    parent.location.href="http://wkeh0312.dothome.co.kr/book/java37.html?a="+text;
+
+
+}
+
+
+
+
+
+</script>
+<style>
+body { margin:0; padding:0; }
+.box { width:400px; height:600px; position: relative;
+text-align: center; border: 1px solid black; 
+}
+.close { position: absolute; bottom: 30px; }
+</style>
+
+</head>
+<body>
+<form name="f" id="f">
+<div class="box">
+<p>[주소검색]</p>
+<input type="text" name="us" id="adr">
+<input type="button" value="주소검색" onclick="bbb(f.us.value);">
+<br>
+<input type="button" class="close" value="창닫기" onclick="ccc();">
+</form>
+</div>
+<script>
+    // var a = document.getElementById("adr");
+    // btn.onclick-function(){
+    //     if(f.us.value==""){
+    //         alert("주소명을 입력해주세요");
+    //     }
+    //     else{
+    //         bbb(f.us.value);
+    //     }
+    // }
+</script>
+</body>
+
+</html>
+<!--
+    Page2.
+    팝업창 시작
+    주소입력 부분이 있어야 하며, 주소검색시 배열로 되어 있는 데이터 값을 출력하시면 됩니다.
+    우편번호, 도로명주소를 부모창에 전달되도록 합니다.
+    배열 값은 Back-end에서 직접 데이터를 가공해서 줍니다.
+    
+    2page에 입력값 name 자유
+    창닫기 버튼 클릭시 팝업창 닫혀져야 하며,
+    주소 재검색 버튼 클릭시 다시 검색할 수 있도록 합니다.
+-->

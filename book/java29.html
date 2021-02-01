@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>Javascript 131~157P 함수</title>
+<script>
+//사용자가 연락처를 입력하게 됩니다. 
+// tel 1~ tel3 name값을 back-end 로 넘겨야 합니다. 
+// 단 숫자 외에는 절대 값이 넘어가면 안됩니다. 
+//해당 값은 get으로 넘기시기 바랍니다. 
+//get url : http://reduck.dothome.co.kr/book/java29.php;
+
+function abc(){
+        var a = Number(f.tel1.value);
+        var b = Number(f.tel2.value);
+        var c = Number(f.tel3.value);
+
+        if(isNaN(a)==false && isNaN(b)==false && isNaN(c)==false){
+            f.method="get";
+            f.action="http://reduck.dothome.co.kr/book/java29.php";
+            f.submit();
+            alert("성공");
+        }
+    }
+
+</script>
+<body>
+    <form name="f">
+    <input type="text" name="tel1">
+    <input type="text" name="tel2">
+    <input type="text" name="tel3">
+    <input type="button" value="전화번호 전송" onclick="abc();">
+</form>
+
+
+</body>
+<script>
+</script>
+</html>

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>step page 제작</title>
+<script>
+    //패스워드를 재입력하는 페이지입니다. 패스워드 재입력시 기본정보를 확인하게 됩니다. 정보보안체크는 필수사항이며 
+    // 미체크시 get해당 url보낼 수 없습니다.
+    // snumber1 ,snumber2 모두 숫자만 입력이 되어야하며 
+    // snumber1 : 6자리 숫자 모두 입력이 되어야 합니다.
+    // snumber2: 7자리 숫자 모두 이름이 입력되어야합니다. 
+    // 대표자명에는 대표자 이름이 입력되어야합니다.
+
+    //필수데이터 : 앞자리 6자리 value값-134327 / 뒷자리 value값-3400678  // 대표자명: 홍길동
+ 
+     function business(){
+         var ck = fn.agree.checked;
+         if(ck==true){
+            var bf = fn.snumber1.value;
+            var bfl = bf.length;
+            var bl = fn.snumber2.value;
+            var bll = bl.length;
+            var ceo = fn.sname.value;
+            
+            if(isNaN(bf)==false && isNaN(bl)==false){ //숫자가 아닌게 아니니까 숫자임
+                if(bfl==6){
+                    if(bll==7){
+                        if(ceo!=""){
+                        fn.method="GET";
+                        fn.action=
+                        //"http://ona0421.dothome.co.kr/book/java36.html";
+                        "java36.html";
+                        fn.submit();
+                        }
+                        else{
+                            alert("대표자명을 입력하세요");
+                        }
+                    } //7
+                    else{
+                        alert("7자리 숫자 모두 입력이 되어야 합니다.");
+                    }
+                }//6
+                else{
+                    alert("6자리 숫자 모두 입력이 되어야 합니다.");
+                }
+            } // 숫자확인 if끝 
+            else{
+                alert("숫자만 입력해주셔야합니다.");
+            }
+        }
+         else{
+             alert("정보보안 체크는 필수사항 입니다.");
+         }
+     }
+</script>
+</head>
+<body>
+    <form name="fn">
+        <input type="checkbox" name="agree">정보보안 암호화
+        <input type="text" name="snumber1" maxlength="6" placeholder="사업자번호 앞자리"> -
+        <input type="text" name="snumber2" maxlength="7" placeholder="사업자번호 뒷자리"><!-- 사업자번호 -->
+        <input type="text" name="sname" placeholder="대표자명"> <!-- 대표자 -->
+        <input type="button" value="패스워드 찾기" onclick="business();">
+    </form>
+   
+
+
+    <!-- 대표자랑 사업자번호가 같아야한다.  -->
+
+
+
+
+</body>
+<script>
+</script>
+</html>
+ 

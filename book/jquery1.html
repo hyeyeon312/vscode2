@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>Jquery</title>
+<base href="../image/">
+<!-- base 태그 : 기본 경로를 미리 셋팅하는 태그입니다. 
+    끝에 /를 필수로 넣어줘야한다. base태그는 한번만 사용가능,중복불가-->
+    <script src="../jquery/jquery.js?v=2"></script>
+<script>
+$(document).ready(function(){
+    var $a;
+    var $b=8;
+    var $c;
+    for($a=1;$a<10;$a++){
+        $c=$b*$a;
+        document.write($b+"*"+$a+"="+$c+"<br>");
+    }
+});
+</script>
+</head>
+<body>
+    <img src="./car1.jpg"><!--base기점으로 이미지 파일명만 사용하여 출력함.(경로를 위에 미리 숨김) -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>array배열5</title>
+<script>
+    var array = [
+        ["red","빨강",1],
+        ["blue","파랑",2],
+        ["green","녹색",3],
+        ["yellow","노랑",4],
+        ["pink","분홍",5],
+        ["black","검정",6]
+    ];
+    var an = array.length;
+    var r;
+    for(r=0;r<an;r++){
+        var c = array[r][2]%2;
+        if(c==0){
+            document.write(array[r][0]+"<br>");
+        }
+        //document.write(array[r][2]+"<br>");
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>

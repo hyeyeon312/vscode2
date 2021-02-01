@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+    <title>자식창 데이터 받기</title>
+    <script>
+        function idcheck(){
+        var a = document.getElementById("mid").value;      
+        window.open("./popup.html?mid="+a,"","width=500 height=500");        
+        }
+    </script>
+</head>
+<body>
+<form name="idck">
+    <input type="text" name="mid" id="mid">
+    <input type="button" value="중복체크" onclick="idcheck();">
+</form>
+
+</body>
+</html>

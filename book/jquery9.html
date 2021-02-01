@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=Edge, chrome=1">
+<title>Jquery9 - 구구단 5단</title>
+<script src="../jquery/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        //abc function 구구단 5단 document.write로 찍기 
+        $("#btn").click(function(){
+            $.fn.aaa();
+        });
+
+        $.fn.abc=function(){
+            //alert("test");
+            var $a;
+            var $b=5;
+            var $c;
+            for($a=1;$a<10;$a++){
+                $c=$b*$a
+                document.write($b+"*"+$a+"="+$c+"<br>");
+            }
+        }
+
+        $("#btn2").click(function(){
+            aaa();
+        });
+
+        $("#btn3").click(function(){ //버튼 3번 클릭 시 !
+            $mid=$("#mid").val(); // text 부분의 값 
+            if($mid==""){ // text부분의 입력값이 없을 경우  
+                alert("입력값을 입력해주세요");
+            }
+            else{ // 입력값이 있다.
+                var $return = $.fn.bbb($mid); // bbb함수에 입력값을 태워서 보낸다.
+                if($return!=""){ //입력값이 없을 경우
+                    alert($return);
+                }   
+            }
+        });
+        $.fn.bbb=function($mid){
+        var $msg;
+        if($mid.length<7){
+            $msg = "해당 입력값은 7자이상 입력하셔야 합니다."
+        }
+        else{
+            $msg ="";
+        }
+        return $msg;
+        }
+    });
+
+    function aaa(){
+            var aa;
+            var bb=8;
+            var cc;
+            for(aa=1;aa<10;aa++){
+                cc=bb*aa
+                document.write(bb+"*"+aa+"="+cc+"<br>");
+            }
+    }
+</script>
+</head>
+<body>
+<input type="button" value="구구단5단" id="btn">
+<input type="button" value="구구단8단" id="btn2">
+<!-- btn3번 클릭 시 mid사용자가 입력하는 값 유/무 체크한 후 입력시 7자리 이상 입력 되었는지 확인 하는 return을 만드시오 -->
+<input type="text" id="mid">
+<input type="button" value="체크" id="btn3">
+</body>
+</html>

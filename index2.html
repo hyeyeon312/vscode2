@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Tabs </title>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+    p {margin: 0; padding: 0;}
+    strong, a, em { text-decoration: none; font-style:  normal; }
+    .container {
+      width: 750px;
+      margin: 0; padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .listHead {
+      margin-bottom: 20px;
+    }
+    .container div {
+      height: auto;
+    }
+    .listCategory {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: row;
+    }
+    .category_item{
+      width: 150px; height: 50px;
+      background-color: gray;
+      margin-right: 5px;
+      line-height: 50px;
+      text-align: center;
+    }
+    .category_item a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* content box */
+    .itemContent{
+      width: 750px;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .contentWrap{
+      margin-bottom: 20px;
+    }
+    .contentdivide {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden;
+    }
+    .itemcontent_img {
+      width: 170px;
+      height: 114px;
+      background-color: #ccc;
+      display: block;
+      margin-right: 20px;
+    }
+    .itemcontent_text {
+      width: 600px;
+      height: 104px;
+      display: block;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* 동물카테고리 */
+    .listAnimal .itemContent {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+    }
+    .listAnimal .itemContent .contentdivide:first-child{
+      width: 364px;
+    }
+    .animal_left {
+      margin-right: 10px;
+    }
+    .animal_left .contentdivide {
+      display: flex;
+      flex-direction: column;
+    }
+    .animal_left .contentdivide .itemcontent_img {
+      width: 364px;
+      height: 180px;
+    }
+    .animal_left .contentdivide .itemcontent_text {
+      width: 346px;
+      display: flex;
+      flex-direction: column;
+    }
+    .animal_right {
+      width: 364px;
+      display: flex;
+      flex-direction: column;
+    }
+    .animal_right .contentdivide { margin-bottom: 10px;}
+    .animal_right .contentdivide .itemcontent_img {
+      width: 98px;
+      height: 98px;
+    }
+    .animal_right .contentdivide .itemcontent_text {
+      width: 248px;
+      height: 98px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 뷰티 카테고리 */
+    .beauty .itemContent {
+      display: flex;
+      flex-direction: row;
+    }
+    .beauty .itemContent .open {
+      display: none;
+      width: 364px;
+    }
+    .beauty .itemContent .contentdivide {
+      display: flex;
+      flex-direction: column;
+    }
+    .beauty .contentdivide .itemcontent_img {
+      width: 364px;
+      height: 180px;
+    }
+    .beauty .contentdivide .itemcontent_text {
+      width: 364px;
+    }  
+
+    .wrap {
+      display: none;
+    }
+    .open {
+      display: block;
+    }
+    .color { 
+      background-color: cornflowerblue;
+    }
+  </style>
+  <script>
+    $(function(){
+      $("#tabs-1").addClass("open");
+      $(".category_item").eq(0).addClass("color");
+
+      $(document).on("click",".category_item",function(){
+        var $idx = $(this).index();
+        var $tab_id = $(this).attr('data-tab');
+
+        // $(this).addClass("color").siblings(".category_item").removeClass("color");
+        // $('.wrap').removeClass('open');
+        // $("#"+$tab_id).addClass("open");
+
+
+        $(this).addClass("color").siblings(".category_item").removeClass("color");
+        $(".wrap").eq($idx).addClass("open")
+        $(".wrap").eq($idx).siblings(".wrap").removeClass("open")
+
+
+        // trigger :  방아쇠를 당기다. 
+      });
+
+
+
+
+  });
+  </script>
+</head>
+<body>
+ 
+<section id="container" class="container">
+  <nav class="listHead">
+    <h1 style="display:none">Global Navigation Menu</h1>
+    <ul class="listCategory">
+      <li class="category_item" data-tab="tabs-1"><a href="#">책문화</a></li>
+      <li class="category_item" data-tab="tabs-2"><a href="#">동물공감</a></li>
+      <li class="category_item" data-tab="tabs-3"><a href="#">패션뷰티</a></li>
+      <li class="category_item" data-tab="tabs-4"><a href="#">책문화</a></li>
+      <li class="category_item" data-tab="tabs-5"><a href="#">동물공감</a></li>
+      <li class="category_item" data-tab="tabs-6"><a href="#">패션뷰티</a></li>
+    </ul>
+  </nav>
+  <div id="tabs-1" class="wrap listBook">
+    <ul class="itemContent">
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>책문화</em>
+            <strong>10초만 누르면 통증이 사라지는 트리거 포인트</strong>
+            <p>사코다 카즈야 지음 |황혜연 옮김 | 분야 건강| 발행일 2021년 3월 16일판형 |페이지 136쪽(올컬러)| ISBN 978-89-6596-428-5(03510). ★★★★★ 일본 아마존 </p>
+            <p>흐름출판</p>
+          </a>
+        </div>
+      </li>
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>책문화</em>
+            <strong>"가게 옆 가게" 아름다운 상생 </strong>
+            <p>한때 호황을 누렸던 구멍가게의 흔적이 더러 남아있는 마을이 있다 한 마을에 겨우 하나 있을 까 말까 한 가게가 놀랍게더 지척에 나란이 이웃해있는 것이다. </p>
+            <p>도서출판 책과 함께</p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div> 
+
+  <div id="tabs-2" class="wrap listAnimal">
+    <ul class="itemContent">
+      <li class="contentWrap animal_left">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>이번주 동물이슈</em>
+            <strong>야산에 방치된 개 사체와 다친 개들의 진실</strong>
+            <p>지난달 31일 인천 서구의 한 야산에 위치한 농장에 들어간 동물보호단체 관계자들은 이연실색 했습니다. 바닥에 널브.. </p>
+            <p>동그람이</p>
+          </a>
+        </div>
+      </li>
+      <li class="contentWrap animal_right">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>동물이 행복한 세상</em>
+            <strong>짧지만 치열했던 <br>샴쌍둥이 고양야의 묘생</strong>
+            <p>스마트인컴</p>
+          </a>
+        </div>
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>빠삐용의 감자농장</em>
+            <strong>냥집사 최대 미스터리 </br>"액체 맞는데... 왜 안흐르지?"</strong>
+            <p>동그람이</p>
+          </a>
+        </div>
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>빠삐용의 감자농장</em>
+            <strong>냥집사 최대 미스터리 </br>"액체 맞는데... 왜 안흐르지?"</strong>
+            <p>동그람이</p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div id="tabs-3" class="wrap beauty">
+    <ul class="itemContent">
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>[style tv] 청순한 매력의 강다은 매니저 </em>
+            <strong>예민러 컴온! 시카 러버가 애정하는 명예 시카템 </strong>
+            <p>아무 제품이나 쓰지 못하는 그녀가 찐하게 아끼는 템은? 피부에 빠른 효과를 전해줘 급속진정이 필요할 때 꼭 찾는대</p>
+            <p>코스모폴리탄</p>
+          </a>
+          </a>
+        </div>
+      </li>
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>[스타일 에디터] 선물로도 좋을 것 같아</em>
+            <strong>팔찌부터 반지까지! 디자이너 실버 브랜드 하울 </strong>
+            <p>디자인부터 볼드하고 앤틱한데 컬러까지 유니크한 팔찌네요 흔하지 않고 가죽팔찌와 레이어트 해도 잘 어울리는 템이야</p>
+            <p>후니세탁소</p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div> 
+  <div id="tabs-4" class="wrap listBook">
+    <ul class="itemContent">
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>책문화</em>
+            <strong>10초만 누르면 통증이 사라지는 트리거 포인트</strong>
+            <p>사코다 카즈야 지음 |황혜연 옮김 | 분야 건강| 발행일 2021년 3월 16일판형 |페이지 136쪽(올컬러)| ISBN 978-89-6596-428-5(03510). ★★★★★ 일본 아마존 </p>
+            <p>흐름출판</p>
+          </a>
+        </div>
+      </li>
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>책문화</em>
+            <strong>"가게 옆 가게" 아름다운 상생 </strong>
+            <p>한때 호황을 누렸던 구멍가게의 흔적이 더러 남아있는 마을이 있다 한 마을에 겨우 하나 있을 까 말까 한 가게가 놀랍게더 지척에 나란이 이웃해있는 것이다. </p>
+            <p>도서출판 책과 함께</p>
+          </a>
+        </div>
+    </ul>
+  </div> 
+  <div id="tabs-5" class="wrap listAnimal">
+    <ul class="itemContent">
+      <li class="contentWrap animal_left">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>이번주 동물이슈</em>
+            <strong>야산에 방치된 개 사체와 다친 개들의 진실</strong>
+            <p>지난달 31일 인천 서구의 한 야산에 위치한 농장에 들어간 동물보호단체 관계자들은 이연실색 했습니다. 바닥에 널브.. </p>
+            <p>동그람이</p>
+          </a>
+        </div>
+      </li>
+      <li class="contentWrap animal_right">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>동물이 행복한 세상</em>
+            <strong>짧지만 치열했던 <br>샴쌍둥이 고양야의 묘생</strong>
+            <p>스마트인컴</p>
+          </a>
+        </div>
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>빠삐용의 감자농장</em>
+            <strong>냥집사 최대 미스터리 </br>"액체 맞는데... 왜 안흐르지?"</strong>
+            <p>동그람이</p>
+          </a>
+        </div>
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>빠삐용의 감자농장</em>
+            <strong>냥집사 최대 미스터리 </br>"액체 맞는데... 왜 안흐르지?"</strong>
+            <p>동그람이</p>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div id="tabs-6" class="wrap beauty">
+    <ul class="itemContent">
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>[style tv] 청순한 매력의 강다은 매니저 </em>
+            <strong>예민러 컴온! 시카 러버가 애정하는 명예 시카템 </strong>
+            <p>아무 제품이나 쓰지 못하는 그녀가 찐하게 아끼는 템은? 피부에 빠른 효과를 전해줘 급속진정이 필요할 때 꼭 찾는대</p>
+            <p>코스모폴리탄</p>
+          </a>
+          </a>
+        </div>
+      </li>
+      <li class="contentWrap">
+        <div class="contentdivide">
+          <a class="itemcontent_img"><img src="" alt=""></a>
+          <a class="itemcontent_text">
+            <em>[스타일 에디터] 선물로도 좋을 것 같아</em>
+            <strong>팔찌부터 반지까지! 디자이너 실버 브랜드 하울 </strong>
+            <p>디자인부터 볼드하고 앤틱한데 컬러까지 유니크한 팔찌네요 흔하지 않고 가죽팔찌와 레이어트 해도 잘 어울리는 템이야</p>
+            <p>후니세탁소</p>
+          </a>
+        </div>
+    </ul>
+  </div> 
+  
+</section>
+ 
+ 
+</body>
+</html>
